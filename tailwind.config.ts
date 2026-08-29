@@ -8,32 +8,32 @@ const config: Config = {
       colors: {
         // ─── Brand Accent ───────────────────────────────────────────
         accent: {
-          DEFAULT: '#2563EB',
-          dark: '#3B82F6',
-          subtle: '#EFF6FF',
-          'subtle-dark': '#1E3A5F',
+          DEFAULT: '#0F766E',
+          dark: '#2DD4BF',
+          subtle: '#E6FFFA',
+          'subtle-dark': '#12312E',
           foreground: '#FFFFFF',
         },
         // ─── Neutrals ───────────────────────────────────────────────
         bg: {
-          DEFAULT: '#F8F9FC',
-          dark: '#0A0D14',
+          DEFAULT: '#FAFAF8',
+          dark: '#101211',
         },
         surface: {
           DEFAULT: '#FFFFFF',
-          dark: '#111827',
-          elevated: '#F1F5F9',
-          'elevated-dark': '#1E293B',
+          dark: '#161918',
+          elevated: '#F1F3F1',
+          'elevated-dark': '#202522',
         },
         text: {
-          primary: '#0F172A',
-          'primary-dark': '#F1F5F9',
-          muted: '#64748B',
-          'muted-dark': '#94A3B8',
+          primary: '#111614',
+          'primary-dark': '#F4F7F5',
+          muted: '#5F6763',
+          'muted-dark': '#AEB8B3',
         },
         border: {
-          DEFAULT: '#E2E8F0',
-          dark: '#1E293B',
+          DEFAULT: '#DFE4E0',
+          dark: '#2A302D',
         },
       },
       fontFamily: {
@@ -57,7 +57,7 @@ const config: Config = {
         'section-sm': '4rem',
       },
       borderRadius: {
-        card: '1rem',
+        card: '0.5rem',
         pill: '9999px',
       },
       boxShadow: {

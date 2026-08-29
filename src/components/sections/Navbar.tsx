@@ -1,133 +1,97 @@
-import React, { useState, useEffect } from 'react'
-import { Menu, X, Sun, Moon } from 'lucide-react'
-import { siteConfig, uiCopy } from '../../content/content'
-
-const NAV_LINKS = [
-  { href: '#about',      label: uiCopy.nav.about },
-  { href: '#skills',     label: uiCopy.nav.skills },
-  { href: '#projects',   label: uiCopy.nav.projects },
-  { href: '#experience', label: uiCopy.nav.experience },
-  { href: '#contact',    label: uiCopy.nav.contact },
-]
+import { Menu, X } from 'lucide-react'
+import { useState } from 'react'
+import { content, type Language } from '../../content/content'
 
 interface NavbarProps {
-  onThemeToggle: () => void
-  isDark: boolean
+  language: Language
+  onLanguageChange: (language: Language) => void
+  path: string
+  onNavigate: (href: string) => void
 }
 
-/**
- * Navbar — Barra de navegación sticky con scroll-detection, mobile menu y theme toggle.
- */
-export const Navbar: React.FC<NavbarProps> = ({ onThemeToggle, isDark }) => {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+export function Navbar({ language, onLanguageChange, path, onNavigate }: NavbarProps) {
+  const [open, setOpen] = useState(false)
+  const nav = content.nav[language]
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const closeMenu = () => setMenuOpen(false)
+  const go = (href: string) => {
+    setOpen(false)
+    onNavigate(href)
+  }
 
   return (
-    <header
-      className={[
-        'fixed top-0 left-0 right-0 z-50',
-        'transition-all duration-300',
-        scrolled
-          ? 'glass shadow-sm py-3'
-          : 'bg-transparent py-5',
-      ].join(' ')}
-      role="banner"
-    >
-      <nav
-        className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between"
-        aria-label="Navegación principal"
-      >
-        {/* Logo / Name */}
-        <a
-          href="#top"
-          className="font-heading font-bold text-lg text-text-primary dark:text-text-primary-dark hover:text-accent dark:hover:text-accent-dark transition-colors animated-underline"
-          onClick={closeMenu}
+    <header className="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur dark:border-border-dark dark:bg-bg-dark/90">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6" aria-label="Navegación principal">
+        <button
+          className="group text-left font-heading text-base font-extrabold text-text-primary transition-colors hover:text-accent dark:text-text-primary-dark dark:hover:text-accent-dark"
+          onClick={() => go('/')}
         >
-          <span className="text-accent dark:text-accent-dark">A</span>ytor
-          <span className="text-accent dark:text-accent-dark">.</span>
-        </a>
+          <span className="block leading-none">Aytor</span>
+          <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-text-muted dark:text-text-muted-dark">
+            Software
+          </span>
+        </button>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8" role="list">
-          {NAV_LINKS.map(link => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm font-medium text-text-muted dark:text-text-muted-dark hover:text-text-primary dark:hover:text-text-primary-dark animated-underline transition-colors"
+        <ul className="hidden items-center gap-1 md:flex" role="list">
+          {nav.map((item) => (
+            <li key={item.href}>
+              <button
+                onClick={() => go(item.href)}
+                aria-current={path === item.href ? 'page' : undefined}
+                className={[
+                  'px-3 py-2 text-sm font-medium transition-colors',
+                  path === item.href
+                    ? 'text-text-primary dark:text-text-primary-dark'
+                    : 'text-text-muted hover:text-text-primary dark:text-text-muted-dark dark:hover:text-text-primary-dark',
+                ].join(' ')}
               >
-                {link.label}
-              </a>
+                {item.label}
+              </button>
             </li>
           ))}
         </ul>
 
-        {/* Right controls */}
-        <div className="flex items-center gap-3">
-          {/* Theme toggle */}
-          <button
-            onClick={onThemeToggle}
-            aria-label={uiCopy.a11y.toggleTheme}
-            className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-surface-elevated dark:hover:bg-surface-elevated-dark transition-colors text-text-muted dark:text-text-muted-dark"
-          >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+        <div className="flex items-center gap-2">
+          <div className="flex border border-border dark:border-border-dark" aria-label="Cambiar idioma">
+            {(['es', 'en'] as const).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => onLanguageChange(lang)}
+                className={[
+                  'px-2.5 py-1.5 text-xs font-semibold uppercase transition-colors',
+                  language === lang
+                    ? 'bg-accent text-white'
+                    : 'text-text-muted hover:text-text-primary dark:text-text-muted-dark dark:hover:text-text-primary-dark',
+                ].join(' ')}
+              >
+                {lang}
+              </button>
+            ))}
+          </div>
 
-          {/* Mobile menu button */}
           <button
-            onClick={() => setMenuOpen(prev => !prev)}
-            aria-expanded={menuOpen}
-            aria-label={menuOpen ? uiCopy.a11y.closeMenu : uiCopy.a11y.openMenu}
+            className="flex h-9 w-9 items-center justify-center border border-border text-text-primary md:hidden dark:border-border-dark dark:text-text-primary-dark"
+            onClick={() => setOpen((value) => !value)}
+            aria-expanded={open}
             aria-controls="mobile-menu"
-            className="md:hidden w-9 h-9 flex items-center justify-center rounded-full hover:bg-surface-elevated dark:hover:bg-surface-elevated-dark transition-colors text-text-muted dark:text-text-muted-dark"
+            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
           >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile menu */}
-      <div
-        id="mobile-menu"
-        aria-hidden={!menuOpen}
-        className={[
-          'md:hidden glass border-t border-border dark:border-border-dark',
-          'transition-all duration-300 overflow-hidden',
-          menuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0 pointer-events-none',
-        ].join(' ')}
-      >
-        <ul className="flex flex-col px-4 py-4 gap-4" role="list">
-          {NAV_LINKS.map(link => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={closeMenu}
-                className="block text-sm font-medium text-text-primary dark:text-text-primary-dark hover:text-accent dark:hover:text-accent-dark transition-colors"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-          {/* CV download in mobile menu */}
-          <li>
-            <a
-              href={siteConfig.cvPdfPath}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMenu}
-              className="block text-sm font-semibold text-accent dark:text-accent-dark"
+      <div id="mobile-menu" className={open ? 'border-t border-border bg-bg dark:border-border-dark dark:bg-bg-dark md:hidden' : 'hidden'}>
+        <div className="mx-auto grid max-w-6xl gap-1 px-4 py-3">
+          {nav.map((item) => (
+            <button
+              key={item.href}
+              onClick={() => go(item.href)}
+              className="py-3 text-left text-sm font-medium text-text-primary dark:text-text-primary-dark"
             >
-              Descargar CV ↓
-            </a>
-          </li>
-        </ul>
+              {item.label}
+            </button>
+          ))}
+        </div>
       </div>
     </header>
   )

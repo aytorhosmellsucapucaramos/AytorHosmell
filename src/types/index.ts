@@ -1,5 +1,3 @@
-// ─── Tipos globales del portafolio ────────────────────────────────────────
-
 export interface Project {
   id: string
   title: string
@@ -47,13 +45,7 @@ export interface ContactFormData {
   name: string
   email: string
   message: string
-}
-
-export interface SocialLink {
-  id: string
-  label: string
-  url: string
-  icon: string
+  website?: string
 }
 
 export interface SiteConfig {

@@ -1,69 +1,33 @@
-import React from 'react'
-import { SectionTitle } from '../atoms/SectionTitle'
-import { useInView } from '../../hooks/useInView'
-import { aboutCopy } from '../../content/content'
+import { content, type Language } from '../../content/content'
 
-/**
- * About — Sección de presentación personal con párrafos y stats.
- */
-export const About: React.FC = () => {
-  const { ref: statsRef, inView: statsInView } = useInView({ threshold: 0.2 })
+interface AboutProps {
+  language?: Language
+}
 
+export function About({ language = 'es' }: AboutProps) {
   return (
-    <section
-      id="about"
-      className="section-padding bg-surface dark:bg-surface-dark"
-      aria-labelledby="about-heading"
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+    <section className="mx-auto min-h-[calc(100vh-65px)] max-w-6xl px-4 py-14 sm:px-6 lg:py-20" aria-labelledby="about-title">
+      <div className="grid gap-12 lg:grid-cols-[260px_1fr]">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-text-muted dark:text-text-muted-dark">/about</p>
+          <h1 id="about-title" className="mt-4 font-heading text-3xl font-extrabold leading-tight sm:text-5xl">
+            {content.about.subtitle[language]}
+          </h1>
+        </div>
 
-          {/* ─── Text content ─── */}
-          <div>
-            <SectionTitle
-              eyebrow="01 — Sobre mí"
-              title={aboutCopy.heading}
-              id="about-heading"
-            />
-
-            <div className="space-y-5">
-              {aboutCopy.paragraphs.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-base text-text-muted dark:text-text-muted-dark font-body leading-relaxed"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+        <div className="max-w-3xl">
+          <div className="space-y-6 text-lg leading-9 text-text-muted dark:text-text-muted-dark">
+            {content.about.paragraphs[language].map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
-
-          {/* ─── Stats grid ─── */}
-          <div
-            ref={statsRef as React.RefObject<HTMLDivElement>}
-            className="grid grid-cols-2 gap-4 lg:mt-24"
-          >
-            {aboutCopy.stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className={[
-                  'bg-bg dark:bg-bg-dark border border-border dark:border-border-dark',
-                  'rounded-card p-6 text-center card-hover',
-                  'transition-all duration-700',
-                  statsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
-                ].join(' ')}
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <p className="text-2xl font-heading font-bold text-accent dark:text-accent-dark mb-1">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-text-muted dark:text-text-muted-dark font-body">
-                  {stat.label}
-                </p>
+          <div className="mt-10 grid gap-3 sm:grid-cols-3">
+            {['SENATI / UTP', 'Web + IA + Cloud', 'No puedo confirmarlo'].map((item) => (
+              <div key={item} className="border border-border p-4 text-sm font-semibold dark:border-border-dark">
+                {item}
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

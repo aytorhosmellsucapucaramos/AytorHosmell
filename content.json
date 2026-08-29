@@ -1,145 +1,204 @@
 {
   "meta": {
-    "version": "1.1.0",
-    "description": "Contenido editable del portafolio de Aytor Sucapuca. Mantener sincronizado con src/content/content.ts.",
+    "version": "2.0.0",
     "lastUpdated": "2026-08-29",
-    "metricsPolicy": "No inventar porcentajes, usuarios, dinero, horas ahorradas ni fechas. Si un dato no esta verificado, usar: No puedo confirmarlo."
+    "metricsPolicy": "No inventar métricas ni KPIs. Si falta evidencia, usar exactamente: No puedo confirmarlo."
   },
   "site": {
     "name": "Aytor Hosmell Sucapuca Ramos",
-    "role": "Ingeniero de Software · IA & Cloud",
+    "role": {
+      "es": "Ingeniero de Software / Desarrollador Web, IA & Cloud",
+      "en": "Software Engineer / Web Developer, AI & Cloud"
+    },
     "email": "REEMPLAZAR@email.com",
     "whatsapp": "51XXXXXXXXX",
+    "whatsappMessage": {
+      "es": "Hola Aytor, vi tu portafolio y me gustaría conversar contigo.",
+      "en": "Hi Aytor, I saw your portfolio and would like to talk with you."
+    },
     "linkedin": "https://linkedin.com/in/REEMPLAZAR",
     "github": "https://github.com/REEMPLAZAR",
-    "location": "Arequipa / Puno, Peru",
-    "cvPdfPath": "/CV_Aytor_Sucapuca.pdf"
+    "location": "Arequipa / Puno, Perú",
+    "cvPdfPath": "/CV_Aytor_Sucapuca.pdf",
+    "url": "https://aytor.dev"
   },
-  "hero": {
-    "headlineShort": "Software civico, IA util y cloud medible.",
-    "headlineMedium": "Digitalizo procesos publicos sin convertirlos en software dificil de usar.",
-    "headlineLong": "Construyo soluciones web y de IA para instituciones que necesitan pasar de procesos manuales a digitales.",
-    "subtitle": "Ingeniero de Software con experiencia en proyectos publicos, chatbots conversacionales y optimizacion cloud.",
-    "badge": "Arequipa / Puno - Peru",
-    "ctaCV": "Descargar CV",
-    "ctaContact": "Hablemos"
-  },
-  "about": {
-    "heading": "Sobre mi",
-    "paragraphs": [
-      "Soy Aytor Sucapuca, Ingeniero de Software formado en SENATI y con estudios en la Universidad Tecnologica del Peru (UTP). Me especializo en desarrollo web full-stack, integracion de inteligencia artificial y soluciones cloud orientadas a resultados reales.",
-      "He colaborado con instituciones publicas como la Municipalidad Provincial de Puno y empresas privadas, digitalizando procesos que antes dependian de registros fisicos o flujos ineficientes.",
-      "Mi enfoque combina arquitecturas cloud modernas (GCP, Azure), practicas de seguridad robustas (WebAuthn, JWT) y automatizacion de despliegues.",
-      "No publico cifras de impacto que no pueda verificar: cualquier porcentaje, cantidad de usuarios o ahorro operativo queda marcado como No puedo confirmarlo hasta contar con evidencia."
+  "nav": {
+    "es": [
+      { "href": "/", "label": "Inicio" },
+      { "href": "/about", "label": "Sobre mí" },
+      { "href": "/skills", "label": "Skills" },
+      { "href": "/projects", "label": "Proyectos" },
+      { "href": "/contact", "label": "Contacto" }
     ],
-    "stats": [
-      { "label": "Sector publico", "value": "Puno" },
-      { "label": "Formacion", "value": "SENATI / UTP" },
-      { "label": "Cloud", "value": "GCP / Azure" },
-      { "label": "Metricas", "value": "No puedo confirmarlo" }
+    "en": [
+      { "href": "/", "label": "Home" },
+      { "href": "/about", "label": "About" },
+      { "href": "/skills", "label": "Skills" },
+      { "href": "/projects", "label": "Projects" },
+      { "href": "/contact", "label": "Contact" }
     ]
   },
-  "projects": [
-    {
-      "id": "registro-canino",
-      "title": "Sistema Digital de Registro Canino",
-      "organization": "Municipalidad Provincial de Puno",
-      "role": "Diseno y desarrollo del sistema para digitalizar padron y control de registros caninos.",
-      "year": "No puedo confirmarlo",
-      "featured": true,
-      "category": ["Sector publico", "Web", "Backend"],
-      "problem": "Gestion manual del padron y control de registros caninos.",
-      "solution": "Sistema web para optimizar gestion de datos publicos y trazabilidad de mascotas.",
-      "stack": ["Node.js", "Express", "PostgreSQL", "HTML", "CSS", "JavaScript"],
-      "metrics": "No puedo confirmarlo"
+  "hero": {
+    "eyebrow": { "es": "Portafolio / CV digital", "en": "Portfolio / Digital CV" },
+    "summary": {
+      "es": "Construyo soluciones web e integraciones de IA para organizaciones públicas y privadas.",
+      "en": "I build web solutions and AI integrations for public and private organizations."
     },
-    {
-      "id": "kusay-tech",
-      "title": "Kusay Tech S.A.C.",
-      "organization": "Kusay Tech S.A.C.",
-      "role": "Practicante Pre-Profesional",
-      "year": "No puedo confirmarlo",
-      "featured": false,
-      "category": ["Web", "Infraestructura"],
-      "problem": "Apoyo en desarrollo e implementacion de soluciones web y soporte en infraestructura.",
-      "solution": "Participacion en desarrollo web, control de versiones, documentacion y soporte tecnico.",
-      "stack": ["Angular", "HTML", "CSS", "JavaScript", "Node.js", "Git"],
-      "metrics": "No puedo confirmarlo"
+    "availability": {
+      "es": "Disponible para proyectos web, IA y cloud",
+      "en": "Available for web, AI and cloud projects"
     },
-    {
-      "id": "innovventas-chatbot",
-      "title": "InnovVentas - Chatbot Inteligente",
-      "organization": "InnovVentas",
-      "role": "Integracion conversacional",
-      "year": "No puedo confirmarlo",
-      "featured": true,
-      "category": ["IA", "Chatbot", "Azure"],
-      "problem": "Atencion automatizada de preguntas frecuentes y consultas de ventas.",
-      "solution": "Azure Bot Service + QnA Maker o equivalente, flujo conversacional y fallback.",
-      "stack": ["Azure Bot Service", "QnA Maker", "Node.js", "REST APIs"],
-      "metrics": "No puedo confirmarlo"
-    },
-    {
-      "id": "seguridad-webauthn",
-      "title": "Seguridad y autenticacion avanzada",
-      "organization": "No puedo confirmarlo",
-      "role": "No puedo confirmarlo",
-      "year": "No puedo confirmarlo",
-      "featured": false,
-      "category": ["Seguridad", "WebAuthn"],
-      "problem": "Necesidad de controles de acceso robustos para aplicaciones web.",
-      "solution": "Implementaciones con WebAuthn, autenticacion por hardware, llaves USB, JWT y bcrypt.",
-      "stack": ["WebAuthn", "Llaves USB", "JWT", "bcrypt"],
-      "metrics": "No puedo confirmarlo"
-    },
-    {
-      "id": "gcp-finops",
-      "title": "Gestion Cloud & FinOps",
-      "organization": "Google Cloud Platform",
-      "role": "No puedo confirmarlo",
-      "year": "No puedo confirmarlo",
-      "featured": false,
-      "category": ["Cloud", "GCP", "FinOps"],
-      "problem": "Control de costes, recursos y automatizacion de despliegues cloud.",
-      "solution": "Practicas para optimizacion de costes y automatizacion de despliegues en Google Cloud Platform.",
-      "stack": ["Google Cloud Platform", "Docker", "GitHub Actions", "Variables de entorno"],
-      "metrics": "No puedo confirmarlo"
+    "primaryCta": { "es": "Escríbeme", "en": "Contact me" },
+    "secondaryCta": { "es": "Descargar CV (PDF)", "en": "Download CV (PDF)" },
+    "quickFacts": {
+      "es": ["Web", "IA / Bots", "Cloud", "Seguridad"],
+      "en": ["Web", "AI / Bots", "Cloud", "Security"]
     }
-  ],
-  "copy": {
-    "es": {
-      "heroHeadlines": [
-        "Software civico, IA util y cloud medible.",
-        "Desarrollo web inteligente para instituciones que necesitan ordenar datos, procesos y atencion.",
-        "Construyo soluciones web y de IA para instituciones que necesitan pasar de procesos manuales a digitales."
+  },
+  "about": {
+    "subtitle": {
+      "es": "Sobre mí — un breve resumen de mi",
+      "en": "About me — a brief summary of me"
+    },
+    "paragraphs": {
+      "es": [
+        "Ingeniero de Software en formación (UTP) y Técnico en Ingeniería de Software con IA (SENATI).",
+        "Me especializo en desarrollo web, chatbots conversacionales e implementaciones cloud para optimizar procesos en el sector público.",
+        "Trabajo con una idea simple: que la tecnología ordene información, reduzca fricción operativa y sea fácil de mantener.",
+        "No invento métricas: cuando falta evidencia o una fecha verificable, lo marco como “No puedo confirmarlo”."
       ],
-      "heroSubtitle": "Ingeniero de Software con experiencia en proyectos publicos, chatbots conversacionales y optimizacion cloud.",
-      "microcopy": {
-        "ctaCv": "Descargar CV",
-        "ctaContact": "Hablemos por WhatsApp o email",
-        "namePlaceholder": "Tu nombre completo",
-        "emailPlaceholder": "tu@email.com",
-        "messagePlaceholder": "Cuentame brevemente que necesitas construir o mejorar.",
-        "success": "Mensaje enviado. Te respondere a la brevedad.",
-        "error": "No se pudo enviar el mensaje. Usa WhatsApp o email directo."
+      "en": [
+        "Software Engineering student at UTP and Software Engineering with AI technician from SENATI.",
+        "I specialize in web development, conversational chatbots and cloud implementations for public-sector process improvement.",
+        "My working principle is simple: technology should organize information, reduce operational friction and stay maintainable.",
+        "I do not invent metrics: when evidence or verified dates are missing, I mark them as “No puedo confirmarlo”."
+      ]
+    }
+  },
+  "skills": {
+    "title": {
+      "es": "Mis conocimientos, manteniendo siempre la simplicidad, seguridad, eficiencia e innovación",
+      "en": "My knowledge, always keeping simplicity, security, efficiency and innovation"
+    },
+    "categories": [
+      { "label": "Frontend", "items": ["Angular", "React", "HTML", "Tailwind", "TypeScript"] },
+      { "label": "Backend", "items": ["Node.js", "Express", "REST", "GraphQL"] },
+      { "label": "DB", "items": ["PostgreSQL", "MySQL", "JSONB"] },
+      { "label": "IA / Bots", "items": ["Azure Bot Service", "QnA Maker", "Integraciones LLMs"] },
+      { "label": "Cloud", "items": ["GCP", "Azure", "Docker", "CI/CD"] },
+      { "label": "Seguridad", "items": ["WebAuthn", "JWT", "bcrypt"] }
+    ]
+  },
+  "projects": {
+    "title": { "es": "Proyectos seleccionados", "en": "Selected projects" },
+    "intro": {
+      "es": "Tarjetas cortas: problema, solución técnica, rol y stack. Sin métricas inventadas.",
+      "en": "Short cards: problem, technical solution, role and stack. No invented metrics."
+    },
+    "items": [
+      {
+        "title": "Sistema Digital de Registro Canino",
+        "organization": "Municipalidad de Puno",
+        "problem": {
+          "es": "Registro canino municipal con necesidad de orden, consulta y trazabilidad.",
+          "en": "Municipal dog registry requiring order, searchability and traceability."
+        },
+        "solution": {
+          "es": "Sistema web para centralizar registros, propietarios y consulta operativa.",
+          "en": "Web system to centralize records, owners and operational queries."
+        },
+        "role": {
+          "es": "Desarrollo web y modelado técnico. Detalles adicionales: No puedo confirmarlo.",
+          "en": "Web development and technical modeling. Additional details: No puedo confirmarlo."
+        },
+        "stack": ["Node.js", "Express", "PostgreSQL", "HTML", "CSS", "JavaScript"]
+      },
+      {
+        "title": "InnovVentas Chatbot",
+        "organization": "InnovVentas",
+        "problem": {
+          "es": "Atención de preguntas frecuentes y consultas comerciales mediante conversación.",
+          "en": "Conversational handling of FAQs and sales inquiries."
+        },
+        "solution": {
+          "es": "Chatbot con base de conocimiento, fallback y lógica de derivación.",
+          "en": "Chatbot with knowledge base, fallback and escalation logic."
+        },
+        "role": {
+          "es": "Integración conversacional. Métricas: No puedo confirmarlo.",
+          "en": "Conversational integration. Metrics: No puedo confirmarlo."
+        },
+        "stack": ["Azure Bot Service", "QnA Maker", "Node.js", "REST"]
+      },
+      {
+        "title": "WebAuthn",
+        "organization": "No puedo confirmarlo",
+        "problem": {
+          "es": "Necesidad de autenticación más resistente que usuario y contraseña.",
+          "en": "Need for authentication stronger than username and password."
+        },
+        "solution": {
+          "es": "Flujo con WebAuthn, llaves de seguridad, JWT y bcrypt.",
+          "en": "Flow with WebAuthn, security keys, JWT and bcrypt."
+        },
+        "role": {
+          "es": "Implementación de seguridad aplicada. Alcance exacto: No puedo confirmarlo.",
+          "en": "Applied security implementation. Exact scope: No puedo confirmarlo."
+        },
+        "stack": ["WebAuthn", "JWT", "bcrypt", "Security keys"]
+      },
+      {
+        "title": "Kusay Tech",
+        "organization": "Kusay Tech S.A.C.",
+        "problem": {
+          "es": "Apoyo en desarrollo web e infraestructura para entornos reales.",
+          "en": "Support for web development and infrastructure in real environments."
+        },
+        "solution": {
+          "es": "Implementación de interfaces, control de versiones, soporte y documentación.",
+          "en": "Interface implementation, version control, support and documentation."
+        },
+        "role": {
+          "es": "Practicante Pre-Profesional. Fechas exactas: No puedo confirmarlo.",
+          "en": "Pre-professional intern. Exact dates: No puedo confirmarlo."
+        },
+        "stack": ["Angular", "HTML", "CSS", "JavaScript", "Node.js", "Git"]
+      }
+    ]
+  },
+  "contact": {
+    "title": { "es": "Contacto", "en": "Contact" },
+    "intro": {
+      "es": "Escríbeme por email, WhatsApp o deja un mensaje breve.",
+      "en": "Write by email, WhatsApp or leave a short message."
+    },
+    "fields": {
+      "name": { "es": "Nombre", "en": "Name" },
+      "email": { "es": "Email", "en": "Email" },
+      "message": { "es": "Mensaje", "en": "Message" }
+    },
+    "placeholders": {
+      "name": { "es": "Tu nombre completo", "en": "Your full name" },
+      "email": { "es": "tu@email.com", "en": "you@email.com" },
+      "message": {
+        "es": "Cuéntame qué necesitas construir o mejorar.",
+        "en": "Briefly describe what you need to build or improve."
       }
     },
-    "en": {
-      "heroHeadlines": [
-        "Civic software, useful AI and measurable cloud.",
-        "Intelligent web development for institutions that need cleaner data, processes and service channels.",
-        "I build web and AI solutions for institutions moving from manual workflows to digital systems."
-      ],
-      "heroSubtitle": "Software Engineer with experience in public-sector projects, conversational chatbots and cloud optimization.",
-      "microcopy": {
-        "ctaCv": "Download CV",
-        "ctaContact": "Contact via WhatsApp or email",
-        "namePlaceholder": "Your full name",
-        "emailPlaceholder": "you@email.com",
-        "messagePlaceholder": "Briefly describe what you need to build or improve.",
-        "success": "Message sent. I will reply as soon as possible.",
-        "error": "The message could not be sent. Use WhatsApp or direct email."
-      }
+    "submit": { "es": "Enviar mensaje", "en": "Send message" },
+    "success": {
+      "es": "Mensaje enviado. Te responderé a la brevedad.",
+      "en": "Message sent. I will reply as soon as possible."
+    },
+    "error": {
+      "es": "No se pudo enviar. Usa email o WhatsApp directo.",
+      "en": "Could not send. Use direct email or WhatsApp."
+    }
+  },
+  "footer": {
+    "privacy": {
+      "es": "El formulario usa validación del cliente y endpoint serverless con honeypot. Configura variables de entorno antes de producción.",
+      "en": "The form uses client validation and a serverless endpoint with honeypot. Configure environment variables before production."
     }
   }
 }

@@ -1,76 +1,33 @@
-import React from 'react'
-import { SectionTitle } from '../atoms/SectionTitle'
-import { Badge } from '../atoms/Badge'
-import { useInView } from '../../hooks/useInView'
-import { skillCategories } from '../../content/content'
+import { content, type Language } from '../../content/content'
 
-/**
- * TechStack — Sección de habilidades técnicas organizadas por categoría.
- */
-export const TechStack: React.FC = () => {
-  return (
-    <section
-      id="skills"
-      className="section-padding bg-bg dark:bg-bg-dark"
-      aria-labelledby="skills-heading"
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <SectionTitle
-          eyebrow="02 — Habilidades"
-          title="Tech Stack"
-          subtitle="Tecnologías que uso para construir soluciones completas."
-          align="center"
-          id="skills-heading"
-        />
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, catIdx) => (
-            <SkillCategoryCard
-              key={category.id}
-              category={category}
-              index={catIdx}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+interface TechStackProps {
+  language?: Language
 }
 
-// ─── Sub-component ────────────────────────────────────────────────────────
-interface SkillCategoryCardProps {
-  category: (typeof skillCategories)[0]
-  index: number
-}
-
-const SkillCategoryCard: React.FC<SkillCategoryCardProps> = ({ category, index }) => {
-  const { ref, inView } = useInView({ threshold: 0.15 })
-
+export function TechStack({ language = 'es' }: TechStackProps) {
   return (
-    <div
-      ref={ref as React.RefObject<HTMLDivElement>}
-      className={[
-        'bg-surface dark:bg-surface-dark border border-border dark:border-border-dark',
-        'rounded-card p-6 card-hover',
-        'transition-all duration-700',
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
-      ].join(' ')}
-      style={{ transitionDelay: `${index * 80}ms` }}
-      role="region"
-      aria-label={`Habilidades de ${category.label}`}
-    >
-      <h3 className="text-sm font-semibold uppercase tracking-widest text-text-muted dark:text-text-muted-dark font-body mb-4">
-        {category.label}
-      </h3>
-      <div className="flex flex-wrap gap-2" role="list" aria-label={`Lista de tecnologías de ${category.label}`}>
-        {category.skills.map(skill => (
-          <div key={skill.name} role="listitem">
-            <Badge colorClass={category.color}>
-              {skill.name}
-            </Badge>
-          </div>
+    <section className="mx-auto min-h-[calc(100vh-65px)] max-w-6xl px-4 py-14 sm:px-6 lg:py-20" aria-labelledby="skills-title">
+      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-text-muted dark:text-text-muted-dark">/skills</p>
+      <h1 id="skills-title" className="mt-4 max-w-4xl font-heading text-3xl font-extrabold leading-tight sm:text-5xl">
+        {content.skills.title[language]}
+      </h1>
+
+      <div className="mt-12 grid gap-px border border-border bg-border dark:border-border-dark dark:bg-border-dark sm:grid-cols-2 lg:grid-cols-3">
+        {content.skills.categories.map((category) => (
+          <article key={category.label} className="bg-bg p-5 transition-colors hover:bg-surface dark:bg-bg-dark dark:hover:bg-surface-dark">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-text-muted dark:text-text-muted-dark">
+              {category.label}
+            </h2>
+            <ul className="mt-5 flex flex-wrap gap-2" aria-label={category.label}>
+              {category.items.map((skill) => (
+                <li key={skill} className="border border-border px-3 py-1.5 text-sm font-medium dark:border-border-dark">
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   )
 }

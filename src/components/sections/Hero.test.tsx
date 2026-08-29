@@ -6,9 +6,11 @@ describe('Hero', () => {
   it('renders the main value proposition and CTAs', () => {
     render(<Hero />)
 
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Software civico')
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
+      'Aytor Hosmell Sucapuca Ramos',
+    )
     expect(screen.getByRole('link', { name: /descargar cv/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /hablemos/i })).toBeInTheDocument()
-    expect(screen.getByRole('complementary', { name: /resumen técnico visual/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /escríbeme/i })).toBeInTheDocument()
+    expect(screen.getByRole('complementary', { name: /resumen del portafolio/i })).toBeInTheDocument()
   })
 })
