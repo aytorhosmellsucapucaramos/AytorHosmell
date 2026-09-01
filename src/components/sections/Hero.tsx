@@ -27,7 +27,19 @@ export function Hero({ language = 'es', onNavigate }: HeroProps) {
               {content.hero.summary[language]}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            
+
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-text-muted dark:text-text-muted-dark">
+              
+            </div>
+          </div>
+
+          <aside className="border-l border-border pl-5 dark:border-border-dark" aria-label="Resumen del portafolio">
+            <p className="text-sm leading-7 text-text-muted dark:text-text-muted-dark">
+              {content.hero.availability[language]}
+            </p>
+            <dl className="mt-6 grid gap-3">
+              <div className="mt-8 flex flex-wrap gap-3">
               <a className="inline-flex items-center gap-2 bg-accent px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent" href={whatsapp} target="_blank" rel="noreferrer">
                 <MessageCircle size={18} />
                 {content.hero.primaryCta[language]}
@@ -37,32 +49,6 @@ export function Hero({ language = 'es', onNavigate }: HeroProps) {
                 {content.hero.secondaryCta[language]}
               </a>
             </div>
-
-            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-text-muted dark:text-text-muted-dark">
-              <a className="inline-flex items-center gap-2 underline-offset-4 hover:underline" href={mailtoHref}>
-                <Mail size={16} />
-                {content.site.email}
-              </a>
-              <a className="inline-flex items-center gap-2 underline-offset-4 hover:underline" href={whatsapp} target="_blank" rel="noreferrer">
-                <MessageCircle size={16} />
-                WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <aside className="border-l border-border pl-5 dark:border-border-dark" aria-label="Resumen del portafolio">
-            <p className="text-sm leading-7 text-text-muted dark:text-text-muted-dark">
-              {content.hero.availability[language]}
-            </p>
-            <dl className="mt-6 grid grid-cols-2 gap-3">
-              {content.hero.quickFacts[language].map((fact, index) => (
-                <div key={fact} className="group border border-border p-3 transition-colors hover:border-accent dark:border-border-dark">
-                  <dt className="text-[10px] font-semibold uppercase tracking-[0.2em] text-text-muted dark:text-text-muted-dark">
-                    0{index + 1}
-                  </dt>
-                  <dd className="mt-2 text-sm font-semibold text-text-primary dark:text-text-primary-dark">{fact}</dd>
-                </div>
-              ))}
             </dl>
           </aside>
         </div>

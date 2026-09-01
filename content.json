@@ -10,14 +10,14 @@
       "es": "Ingeniero de Software / Desarrollador Web, IA & Cloud",
       "en": "Software Engineer / Web Developer, AI & Cloud"
     },
-    "email": "REEMPLAZAR@email.com",
-    "whatsapp": "51XXXXXXXXX",
+    "email": "ramosaytor@gmail.com",
+    "whatsapp": "51984450240",
     "whatsappMessage": {
       "es": "Hola Aytor, vi tu portafolio y me gustaría conversar contigo.",
       "en": "Hi Aytor, I saw your portfolio and would like to talk with you."
     },
-    "linkedin": "https://linkedin.com/in/REEMPLAZAR",
-    "github": "https://github.com/REEMPLAZAR",
+    "linkedin": "https://linkedin.com/in/aytorhosmellsucapucaramos",
+    "github": "https://github.com/aytorhosmellsucapucaramos",
     "location": "Arequipa / Puno, Perú",
     "cvPdfPath": "/CV_Aytor_Sucapuca.pdf",
     "url": "https://aytor.dev"
@@ -49,7 +49,7 @@
       "en": "Available for web, AI and cloud projects"
     },
     "primaryCta": { "es": "Escríbeme", "en": "Contact me" },
-    "secondaryCta": { "es": "Descargar CV (PDF)", "en": "Download CV (PDF)" },
+    "secondaryCta": { "es": "Descargar CV", "en": "Download CV" },
     "quickFacts": {
       "es": ["Web", "IA / Bots", "Cloud", "Seguridad"],
       "en": ["Web", "AI / Bots", "Cloud", "Security"]
@@ -131,23 +131,6 @@
         "stack": ["Azure Bot Service", "QnA Maker", "Node.js", "REST"]
       },
       {
-        "title": "WebAuthn",
-        "organization": "No puedo confirmarlo",
-        "problem": {
-          "es": "Necesidad de autenticación más resistente que usuario y contraseña.",
-          "en": "Need for authentication stronger than username and password."
-        },
-        "solution": {
-          "es": "Flujo con WebAuthn, llaves de seguridad, JWT y bcrypt.",
-          "en": "Flow with WebAuthn, security keys, JWT and bcrypt."
-        },
-        "role": {
-          "es": "Implementación de seguridad aplicada. Alcance exacto: No puedo confirmarlo.",
-          "en": "Applied security implementation. Exact scope: No puedo confirmarlo."
-        },
-        "stack": ["WebAuthn", "JWT", "bcrypt", "Security keys"]
-      },
-      {
         "title": "Kusay Tech",
         "organization": "Kusay Tech S.A.C.",
         "problem": {
@@ -197,8 +180,8 @@
   },
   "footer": {
     "privacy": {
-      "es": "El formulario usa validación del cliente y endpoint serverless con honeypot. Configura variables de entorno antes de producción.",
-      "en": "The form uses client validation and a serverless endpoint with honeypot. Configure environment variables before production."
+      "es": "Construyamos algo útil.",
+      "en": "Let's build something useful. "
     }
   }
 }
