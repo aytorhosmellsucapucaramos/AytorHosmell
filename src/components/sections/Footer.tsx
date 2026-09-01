@@ -3,10 +3,9 @@ import { content, mailtoHref, whatsappHref, type Language } from '../../content/
 
 interface FooterProps {
   language?: Language
-  onNavigate?: (href: string) => void
 }
 
-export function Footer({ language = 'es', onNavigate }: FooterProps) {
+export function Footer({ language = 'es' }: FooterProps) {
   return (
     <footer className="border-t border-border bg-surface py-8 dark:border-border-dark dark:bg-surface-dark">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 text-sm text-text-muted dark:text-text-muted-dark sm:px-6 md:grid-cols-[1fr_auto]">

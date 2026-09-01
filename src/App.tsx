@@ -86,7 +86,7 @@ function App() {
           {path === '/projects' && <Projects language={language} />}
           {path === '/contact' && <Contact language={language} />}
         </main>
-        <Footer language={language} onNavigate={navigate} />
+        <Footer language={language} />
       </div>
     </HelmetProvider>
   )
