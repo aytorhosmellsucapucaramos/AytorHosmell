@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aytor.hosmell.workers.dev/sitemap.xml
