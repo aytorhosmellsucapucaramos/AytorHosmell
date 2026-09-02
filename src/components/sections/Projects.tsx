@@ -1,64 +1,100 @@
+import { ArrowRight } from 'lucide-react'
+import { FadeIn } from '../atoms/FadeIn'
 import { content, type Language, type ProjectItem } from '../../content/content'
 
 interface ProjectsProps {
-  language?: Language
+  language: Language
 }
 
-export function Projects({ language = 'es' }: ProjectsProps) {
+export function Projects({ language }: ProjectsProps) {
   return (
-    <section className="mx-auto min-h-[calc(100vh-65px)] max-w-6xl px-4 py-14 sm:px-6 lg:py-20" aria-labelledby="projects-title">
-      <div className="max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-text-muted dark:text-text-muted-dark">/projects</p>
-        <h1 id="projects-title" className="mt-4 font-heading text-3xl font-extrabold leading-tight sm:text-5xl">
+    <section
+      aria-labelledby="projects-title"
+      className="mx-auto min-h-[calc(100vh-73px)] max-w-6xl px-4 py-14 sm:px-6 lg:py-20"
+    >
+      <FadeIn className="max-w-3xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-text-muted dark:text-text-muted-dark">
+          /projects
+        </p>
+        <h1 className="mt-5 font-heading text-4xl font-extrabold leading-tight sm:text-5xl" id="projects-title">
           {content.projects.title[language]}
         </h1>
-        <p className="mt-4 text-base leading-8 text-text-muted dark:text-text-muted-dark">{content.projects.intro[language]}</p>
-      </div>
+        <p className="mt-5 text-base leading-8 text-text-muted dark:text-text-muted-dark">
+          {content.projects.intro[language]}
+        </p>
+      </FadeIn>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-2">
-        {content.projects.items.map((project) => (
-          <ProjectCard key={project.title} project={project} language={language} />
+      <div className="mt-12 border-t border-border dark:border-border-dark">
+        {content.projects.items.map((project, index) => (
+          <FadeIn delay={index * 80} key={project.title}>
+            <CaseStudy language={language} number={`0${index + 1}`} project={project} />
+          </FadeIn>
         ))}
       </div>
     </section>
   )
 }
 
-function ProjectCard({ project, language }: { project: ProjectItem; language: Language }) {
+function CaseStudy({
+  language,
+  number,
+  project,
+}: {
+  language: Language
+  number: string
+  project: ProjectItem
+}) {
   return (
-    <article className="group border border-border bg-bg p-5 transition-transform hover:-translate-y-1 hover:border-accent dark:border-border-dark dark:bg-bg-dark">
-      <div className="flex items-start justify-between gap-4">
+    <article className="group grid gap-6 border-b border-border py-8 transition-colors duration-200 hover:bg-surface dark:border-border-dark dark:hover:bg-surface-dark lg:grid-cols-[80px_1fr]">
+      <p className="text-sm font-semibold text-accent">{number}</p>
+      <div className="grid gap-6 lg:grid-cols-[1fr_260px]">
         <div>
-          <h2 className="font-heading text-xl font-extrabold">{project.title}</h2>
-          <p className="mt-1 text-sm text-text-muted dark:text-text-muted-dark">{project.organization}</p>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h2 className="font-heading text-3xl font-extrabold leading-tight transition-transform duration-200 group-hover:translate-x-1">
+                {project.title}
+              </h2>
+              {project.organization && (
+                <p className="mt-2 text-sm font-semibold text-text-muted dark:text-text-muted-dark">
+                  {project.organization}
+                </p>
+              )}
+            </div>
+            <ArrowRight
+              className="mt-1 opacity-0 transition-all duration-200 group-hover:translate-x-1 group-hover:opacity-100"
+              size={22}
+              aria-hidden="true"
+            />
+          </div>
+          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.16em] text-accent">
+            {project.context[language]}
+          </p>
+          <p className="mt-4 max-w-3xl text-base leading-8 text-text-muted dark:text-text-muted-dark">
+            {project.description[language]}
+          </p>
+          {project.links.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-4">
+              {project.links.map((link) => (
+                <a className="editorial-link text-sm font-semibold" href={link.href} key={link.href}>
+                  {link.label}
+                  <ArrowRight size={16} />
+                </a>
+              ))}
+            </div>
+          )}
         </div>
-        <span className="shrink-0 text-xs font-semibold text-text-muted transition-colors group-hover:text-accent dark:text-text-muted-dark">
-          ↗
-        </span>
+
+        <ul className="flex flex-wrap content-start gap-2 lg:justify-end" aria-label="Tecnologías">
+          {project.stack.map((tech) => (
+            <li
+              className="border border-border px-2.5 py-1 text-xs font-semibold text-text-muted dark:border-border-dark dark:text-text-muted-dark"
+              key={tech}
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <dl className="mt-6 space-y-4 text-sm leading-7">
-        <div>
-          <dt className="font-semibold text-text-primary dark:text-text-primary-dark">{language === 'es' ? 'Problema' : 'Problem'}</dt>
-          <dd className="text-text-muted dark:text-text-muted-dark">{project.problem[language]}</dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-text-primary dark:text-text-primary-dark">{language === 'es' ? 'Solución técnica' : 'Technical solution'}</dt>
-          <dd className="text-text-muted dark:text-text-muted-dark">{project.solution[language]}</dd>
-        </div>
-        <div>
-          <dt className="font-semibold text-text-primary dark:text-text-primary-dark">{language === 'es' ? 'Rol' : 'Role'}</dt>
-          <dd className="text-text-muted dark:text-text-muted-dark">{project.role[language]}</dd>
-        </div>
-      </dl>
-
-      <ul className="mt-6 flex flex-wrap gap-2" aria-label="Tech stack">
-        {project.stack.map((tech) => (
-          <li key={tech} className="border border-border px-2.5 py-1 text-xs font-semibold text-text-muted dark:border-border-dark dark:text-text-muted-dark">
-            {tech}
-          </li>
-        ))}
-      </ul>
     </article>
   )
 }

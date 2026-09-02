@@ -1,31 +1,44 @@
+import { FadeIn } from '../atoms/FadeIn'
 import { content, type Language } from '../../content/content'
 
 interface TechStackProps {
-  language?: Language
+  language: Language
 }
 
-export function TechStack({ language = 'es' }: TechStackProps) {
+export function TechStack({ language }: TechStackProps) {
   return (
-    <section className="mx-auto min-h-[calc(100vh-65px)] max-w-6xl px-4 py-14 sm:px-6 lg:py-20" aria-labelledby="skills-title">
-      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-text-muted dark:text-text-muted-dark">/skills</p>
-      <h1 id="skills-title" className="mt-4 max-w-4xl font-heading text-3xl font-extrabold leading-tight sm:text-5xl">
-        {content.skills.title[language]}
-      </h1>
+    <section
+      aria-labelledby="skills-title"
+      className="mx-auto min-h-[calc(100vh-73px)] max-w-6xl px-4 py-14 sm:px-6 lg:py-20"
+    >
+      <FadeIn className="max-w-3xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-text-muted dark:text-text-muted-dark">
+          /skills
+        </p>
+        <h1 className="mt-5 font-heading text-4xl font-extrabold leading-tight sm:text-5xl" id="skills-title">
+          {content.skills.title[language]}
+        </h1>
+        <p className="mt-5 text-base leading-8 text-text-muted dark:text-text-muted-dark">
+          {content.skills.intro[language]}
+        </p>
+      </FadeIn>
 
-      <div className="mt-12 grid gap-px border border-border bg-border dark:border-border-dark dark:bg-border-dark sm:grid-cols-2 lg:grid-cols-3">
-        {content.skills.categories.map((category) => (
-          <article key={category.label} className="bg-bg p-5 transition-colors hover:bg-surface dark:bg-bg-dark dark:hover:bg-surface-dark">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-text-muted dark:text-text-muted-dark">
-              {category.label}
-            </h2>
-            <ul className="mt-5 flex flex-wrap gap-2" aria-label={category.label}>
-              {category.items.map((skill) => (
-                <li key={skill} className="border border-border px-3 py-1.5 text-sm font-medium dark:border-border-dark">
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </article>
+      <div className="mt-12 border-t border-border dark:border-border-dark">
+        {content.skills.categories.map((category, index) => (
+          <FadeIn delay={index * 60} key={category.label}>
+            <section className="grid gap-4 border-b border-border py-6 dark:border-border-dark md:grid-cols-[220px_1fr]">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-text-primary dark:text-text-primary-dark">
+                {category.label}
+              </h2>
+              <ul className="flex flex-wrap gap-x-4 gap-y-2" aria-label={category.label}>
+                {category.items.map((skill) => (
+                  <li className="text-base text-text-muted dark:text-text-muted-dark" key={skill}>
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </FadeIn>
         ))}
       </div>
     </section>

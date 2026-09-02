@@ -2,24 +2,27 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <!-- Favicon placeholder — reemplazar con /public/favicon.ico -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Primary meta — React Helmet actualizará estos en runtime -->
-    <title>Aytor Sucapuca — Ingeniero de Software | IA & Cloud</title>
-    <meta name="description" content="Portafolio de Aytor Hosmell Sucapuca Ramos. Especializado en desarrollo web, integración de IA y soluciones cloud para el sector público y privado." />
-    <!-- Preconnect para Google Fonts -->
+    <title>Aytor Hosmell Sucapuca Ramos | Portafolio</title>
+    <meta
+      name="description"
+      content="Portafolio de Aytor Hosmell Sucapuca Ramos, estudiante de Ingeniería de Software y desarrollador web en Puno, Perú."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Inline critical: dark mode flash prevention -->
     <script>
-      (function() {
-        var saved = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      ;(function () {
+        var saved = localStorage.getItem('theme')
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
         if (saved === 'dark' || (!saved && prefersDark)) {
-          document.documentElement.classList.add('dark');
+          document.documentElement.classList.add('dark')
         }
-      })();
+      })()
     </script>
   </head>
   <body>

@@ -1,56 +1,61 @@
-# Aytor Hosmell Sucapuca Ramos - Portfolio/CV
+# Aytor Hosmell Sucapuca Ramos - Portfolio
 
-Portafolio minimalista construido con React, TypeScript, Tailwind CSS y Vite.
+Portafolio editorial y minimalista construido con React, TypeScript, Vite, Tailwind CSS y Cloudflare Workers.
 
-## Estructura
+## Rutas
 
-- `/` resume el portafolio en el hero: contacto, resumen, WhatsApp/email y CV.
-- `/about` incluye el subtítulo exacto: `Sobre mí — un breve resumen de mi`.
-- `/skills` incluye el encabezado exacto solicitado.
-- `/projects` muestra tarjetas con problema, solución técnica, rol y stack.
-- `/contact` contiene formulario validado y contacto directo.
+- `/`
+- `/about`
+- `/skills`
+- `/projects`
+- `/contact`
 
-El copy editable está en `content.json`. Cambia ahí nombre, email, WhatsApp, enlaces, textos ES/EN y proyectos.
+Wrangler está configurado con `not_found_handling: single-page-application`, por lo que las rutas internas funcionan al abrirlas directamente o al refrescar el navegador.
 
-## Desarrollo local
+## Contenido
+
+El copy editable está en `content.json`.
+
+Actualiza ahí:
+
+- Nombre, rol, correo, WhatsApp y GitHub.
+- Textos en español e inglés.
+- Proyectos destacados del inicio.
+- Casos de estudio de `/projects`.
+- URL canónica del sitio.
+
+## Desarrollo
 
 ```bash
 npm install
 npm run dev
 ```
 
-Build de producción:
+## Calidad
 
 ```bash
+npm run type-check
+npm run lint
+npm test
 npm run build
 ```
 
-Preview:
+## Preview con Cloudflare
 
 ```bash
 npm run preview
 ```
 
-## Deploy en Vercel
-
-1. Sube el repositorio a GitHub.
-2. Importa el proyecto en Vercel.
-3. Usa el build command `npm run build`.
-4. Usa output directory `dist`.
-5. Agrega variables de entorno para el formulario:
+## Deploy en Cloudflare Workers
 
 ```bash
-RESEND_API_KEY=tu_api_key_de_resend
-CONTACT_TO_EMAIL=tu_email_destino
-CONTACT_FROM_EMAIL=Portfolio <contacto@tu-dominio.com>
+npm run deploy
 ```
 
-El endpoint `api/contact.ts` valida campos requeridos, email y honeypot (`website`). Si no configuras las variables, el formulario mostrará error, pero email y WhatsApp seguirán visibles.
+La configuración principal está en `wrangler.jsonc`.
 
-## Actualizar el CV PDF
+## Actualizar CV
 
-Reemplaza `public/CV_Aytor_Sucapuca.pdf` por tu CV real manteniendo el mismo nombre. Si cambias el nombre, actualiza `site.cvPdfPath` en `content.json`.
+Reemplaza `public/CV_Aytor_Sucapuca.pdf` por el PDF real manteniendo el mismo nombre.
 
-## Política de contenido
-
-No se inventan métricas, fechas ni KPIs. Cuando falta evidencia, el sitio usa: `No puedo confirmarlo`.
+Si quieres usar otro nombre, cambia `site.cvPdfPath` en `content.json`.

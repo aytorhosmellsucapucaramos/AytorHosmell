@@ -1,32 +1,50 @@
 {
   "meta": {
-    "version": "2.0.0",
-    "lastUpdated": "2026-08-29",
-    "metricsPolicy": "No inventar métricas ni KPIs. Si falta evidencia, usar exactamente: No puedo confirmarlo."
+    "version": "3.0.0",
+    "lastUpdated": "2026-09-01",
+    "metricsPolicy": "Usar únicamente información confirmada por el propietario del portafolio."
   },
   "site": {
     "name": "Aytor Hosmell Sucapuca Ramos",
     "role": {
-      "es": "Ingeniero de Software / Desarrollador Web, IA & Cloud",
-      "en": "Software Engineer / Web Developer, AI & Cloud"
+      "es": "Estudiante de Ingeniería de Software | Desarrollador web",
+      "en": "Software Engineering Student | Web Developer"
+    },
+    "shortRole": {
+      "es": "Estudiante de Ingeniería de Software y desarrollador web.",
+      "en": "Software Engineering student and web developer."
     },
     "email": "ramosaytor@gmail.com",
     "whatsapp": "51984450240",
+    "whatsappDisplay": "+51 984 450 240",
     "whatsappMessage": {
       "es": "Hola Aytor, vi tu portafolio y me gustaría conversar contigo.",
       "en": "Hi Aytor, I saw your portfolio and would like to talk with you."
     },
-    "linkedin": "https://linkedin.com/in/aytorhosmellsucapucaramos",
     "github": "https://github.com/aytorhosmellsucapucaramos",
-    "location": "Arequipa / Puno, Perú",
+    "location": "Puno, Perú",
     "cvPdfPath": "/CV_Aytor_Sucapuca.pdf",
-    "url": "https://aytor.dev"
+    "url": "https://aytor.hosmell.workers.dev/"
+  },
+  "seo": {
+    "title": {
+      "es": "Aytor Hosmell Sucapuca Ramos | Portafolio",
+      "en": "Aytor Hosmell Sucapuca Ramos | Portfolio"
+    },
+    "description": {
+      "es": "Portafolio de Aytor Hosmell Sucapuca Ramos, estudiante de Ingeniería de Software y desarrollador web en Puno, Perú.",
+      "en": "Portfolio of Aytor Hosmell Sucapuca Ramos, Software Engineering student and web developer in Puno, Peru."
+    },
+    "imageAlt": {
+      "es": "Portafolio minimalista de Aytor Hosmell Sucapuca Ramos",
+      "en": "Minimal portfolio of Aytor Hosmell Sucapuca Ramos"
+    }
   },
   "nav": {
     "es": [
       { "href": "/", "label": "Inicio" },
       { "href": "/about", "label": "Sobre mí" },
-      { "href": "/skills", "label": "Skills" },
+      { "href": "/skills", "label": "Habilidades" },
       { "href": "/projects", "label": "Proyectos" },
       { "href": "/contact", "label": "Contacto" }
     ],
@@ -39,149 +57,155 @@
     ]
   },
   "hero": {
-    "eyebrow": { "es": "Portafolio / CV digital", "en": "Portfolio / Digital CV" },
-    "summary": {
-      "es": "Construyo soluciones web e integraciones de IA para organizaciones públicas y privadas.",
-      "en": "I build web solutions and AI integrations for public and private organizations."
+    "greeting": { "es": "Hola, soy Aytor.", "en": "Hi, I am Aytor." },
+    "profession": {
+      "es": "Estudiante de Ingeniería de Software y desarrollador web.",
+      "en": "Software Engineering student and web developer."
     },
-    "availability": {
-      "es": "Disponible para proyectos web, IA y cloud",
-      "en": "Available for web, AI and cloud projects"
+    "summary": {
+      "es": "Creo aplicaciones orientadas a resolver necesidades reales mediante desarrollo web, datos y servicios cloud.",
+      "en": "I create applications focused on solving real needs through web development, data and cloud services."
     },
     "primaryCta": { "es": "Escríbeme", "en": "Contact me" },
-    "secondaryCta": { "es": "Descargar CV", "en": "Download CV" },
-    "quickFacts": {
-      "es": ["Web", "IA / Bots", "Cloud", "Seguridad"],
-      "en": ["Web", "AI / Bots", "Cloud", "Security"]
-    }
+    "projectsCta": { "es": "Ver proyectos", "en": "View projects" },
+    "cvCta": { "es": "Descargar CV", "en": "Download CV" },
+    "featuredTitle": { "es": "Trabajo destacado", "en": "Featured work" },
+    "featuredProjects": [
+      {
+        "number": "01",
+        "title": "Sistema digital de registro canino",
+        "description": {
+          "es": "Registro de mascotas y propietarios con identificación, reportes y soporte geolocalizado.",
+          "en": "Pet and owner registry with identification, reports and geolocated support."
+        },
+        "stack": "React / Node.js / PostgreSQL"
+      },
+      {
+        "number": "02",
+        "title": "Sistema de gestión web con Angular",
+        "description": {
+          "es": "Aplicación modular para productos, ventas, clientes, usuarios y configuración.",
+          "en": "Modular application for products, sales, customers, users and settings."
+        },
+        "stack": "Angular / TypeScript / RxJS"
+      },
+      {
+        "number": "03",
+        "title": "Landing page Águilas Negras",
+        "description": {
+          "es": "Landing responsive para seguridad privada con contacto directo e identidad táctica.",
+          "en": "Responsive landing page for private security with direct contact and tactical identity."
+        },
+        "stack": "Angular"
+      }
+    ]
   },
   "about": {
-    "subtitle": {
-      "es": "Sobre mí — un breve resumen de mi",
-      "en": "About me — a brief summary of me"
+    "title": {
+      "es": "Sobre mí — un breve resumen de mi trayectoria",
+      "en": "About me — a brief summary of my path"
     },
     "paragraphs": {
       "es": [
-        "Ingeniero de Software en formación (UTP) y Técnico en Ingeniería de Software con IA (SENATI).",
-        "Me especializo en desarrollo web, chatbots conversacionales e implementaciones cloud para optimizar procesos en el sector público.",
-        "Trabajo con una idea simple: que la tecnología ordene información, reduzca fricción operativa y sea fácil de mantener.",
-        "No invento métricas: cuando falta evidencia o una fecha verificable, lo marco como “No puedo confirmarlo”."
+        "Soy estudiante de Ingeniería de Software en la Universidad Tecnológica del Perú.",
+        "También cuento con formación técnica en Ingeniería de Software con Inteligencia Artificial en SENATI, dentro de un programa de seis semestres.",
+        "Realicé prácticas preprofesionales de software durante aproximadamente seis meses en Kusay Tech S.A.C. y durante seis meses en la Municipalidad Provincial de Puno.",
+        "En la Municipalidad Provincial de Puno desarrollé el proyecto de registro digital de canes.",
+        "Mi interés profesional se concentra en desarrollo web, bases de datos, inteligencia artificial y cloud."
       ],
       "en": [
-        "Software Engineering student at UTP and Software Engineering with AI technician from SENATI.",
-        "I specialize in web development, conversational chatbots and cloud implementations for public-sector process improvement.",
-        "My working principle is simple: technology should organize information, reduce operational friction and stay maintainable.",
-        "I do not invent metrics: when evidence or verified dates are missing, I mark them as “No puedo confirmarlo”."
+        "I am a Software Engineering student at Universidad Tecnológica del Perú.",
+        "I also have technical training in Software Engineering with Artificial Intelligence from SENATI, in a six-semester program.",
+        "I completed pre-professional software internships for approximately six months at Kusay Tech S.A.C. and for six months at the Provincial Municipality of Puno.",
+        "At the Provincial Municipality of Puno, I developed the digital dog registration project.",
+        "My professional interests focus on web development, databases, artificial intelligence and cloud."
       ]
     }
   },
   "skills": {
     "title": {
-      "es": "Mis conocimientos, manteniendo siempre la simplicidad, seguridad, eficiencia e innovación",
-      "en": "My knowledge, always keeping simplicity, security, efficiency and innovation"
+      "es": "Habilidades",
+      "en": "Skills"
+    },
+    "intro": {
+      "es": "Conocimientos organizados por área, con una presentación clara y directa.",
+      "en": "Knowledge grouped by area, with a clear and direct presentation."
     },
     "categories": [
-      { "label": "Frontend", "items": ["Angular", "React", "HTML", "Tailwind", "TypeScript"] },
-      { "label": "Backend", "items": ["Node.js", "Express", "REST", "GraphQL"] },
-      { "label": "DB", "items": ["PostgreSQL", "MySQL", "JSONB"] },
-      { "label": "IA / Bots", "items": ["Azure Bot Service", "QnA Maker", "Integraciones LLMs"] },
-      { "label": "Cloud", "items": ["GCP", "Azure", "Docker", "CI/CD"] },
-      { "label": "Seguridad", "items": ["WebAuthn", "JWT", "bcrypt"] }
+      { "label": "Frontend", "items": ["Angular", "React", "HTML", "CSS", "Tailwind CSS", "JavaScript", "TypeScript"] },
+      { "label": "Backend", "items": ["Node.js", "Express", "REST"] },
+      { "label": "Bases de datos", "items": ["PostgreSQL", "MySQL", "JSONB"] },
+      { "label": "Herramientas", "items": ["Git", "GitHub", "Vite", "DBeaver", "pgAdmin", "Postman"] },
+      { "label": "Fundamentos", "items": ["Java", "Programación orientada a objetos", "Estructuras de datos", "SOLID", "Patrones GoF", "Redes"] },
+      { "label": "Cloud e IA", "items": ["Fundamentos de Azure", "Machine learning", "Automatización", "Integraciones con IA"] }
     ]
   },
   "projects": {
-    "title": { "es": "Proyectos seleccionados", "en": "Selected projects" },
+    "title": {
+      "es": "Proyectos",
+      "en": "Projects"
+    },
     "intro": {
-      "es": "Tarjetas cortas: problema, solución técnica, rol y stack. Sin métricas inventadas.",
-      "en": "Short cards: problem, technical solution, role and stack. No invented metrics."
+      "es": "Casos seleccionados presentados como trabajo editorial: contexto, alcance y tecnologías trabajadas.",
+      "en": "Selected cases presented as editorial work: context, scope and technologies used."
     },
     "items": [
       {
-        "title": "Sistema Digital de Registro Canino",
-        "organization": "Municipalidad de Puno",
-        "problem": {
-          "es": "Registro canino municipal con necesidad de orden, consulta y trazabilidad.",
-          "en": "Municipal dog registry requiring order, searchability and traceability."
+        "title": "Sistema digital de registro canino",
+        "organization": "Municipalidad Provincial de Puno",
+        "context": {
+          "es": "Proyecto desarrollado durante mis prácticas preprofesionales.",
+          "en": "Project developed during my pre-professional internship."
         },
-        "solution": {
-          "es": "Sistema web para centralizar registros, propietarios y consulta operativa.",
-          "en": "Web system to centralize records, owners and operational queries."
+        "description": {
+          "es": "Sistema web propuesto para registrar mascotas y propietarios, generar identificación mediante QR, producir carnets en PDF, controlar vacunaciones y manejar reportes geolocalizados.",
+          "en": "Proposed web system to register pets and owners, generate QR identification, produce PDF cards, control vaccinations and manage geolocated reports."
         },
-        "role": {
-          "es": "Desarrollo web y modelado técnico. Detalles adicionales: No puedo confirmarlo.",
-          "en": "Web development and technical modeling. Additional details: No puedo confirmarlo."
-        },
-        "stack": ["Node.js", "Express", "PostgreSQL", "HTML", "CSS", "JavaScript"]
+        "stack": ["React", "Node.js", "Express", "PostgreSQL/MySQL", "JWT", "Leaflet/OpenStreetMap", "PDFKit", "QRCode"],
+        "links": []
       },
       {
-        "title": "InnovVentas Chatbot",
-        "organization": "InnovVentas",
-        "problem": {
-          "es": "Atención de preguntas frecuentes y consultas comerciales mediante conversación.",
-          "en": "Conversational handling of FAQs and sales inquiries."
+        "title": "Sistema de gestión web",
+        "organization": "",
+        "context": {
+          "es": "Aplicación modular orientada a gestión operativa.",
+          "en": "Modular application focused on operational management."
         },
-        "solution": {
-          "es": "Chatbot con base de conocimiento, fallback y lógica de derivación.",
-          "en": "Chatbot with knowledge base, fallback and escalation logic."
+        "description": {
+          "es": "Aplicación modular con productos, categorías, ventas, clientes, usuarios y configuración. Trabaja principios SOLID, patrones de diseño, validaciones y notificaciones.",
+          "en": "Modular application with products, categories, sales, customers, users and settings. It works with SOLID principles, design patterns, validations and notifications."
         },
-        "role": {
-          "es": "Integración conversacional. Métricas: No puedo confirmarlo.",
-          "en": "Conversational integration. Metrics: No puedo confirmarlo."
-        },
-        "stack": ["Azure Bot Service", "QnA Maker", "Node.js", "REST"]
+        "stack": ["Angular", "TypeScript", "RxJS", "Formularios reactivos", "Datos mock"],
+        "links": []
       },
       {
-        "title": "Kusay Tech",
-        "organization": "Kusay Tech S.A.C.",
-        "problem": {
-          "es": "Apoyo en desarrollo web e infraestructura para entornos reales.",
-          "en": "Support for web development and infrastructure in real environments."
+        "title": "Águilas Negras",
+        "organization": "",
+        "context": {
+          "es": "Landing page responsive para una empresa de seguridad privada.",
+          "en": "Responsive landing page for a private security company."
         },
-        "solution": {
-          "es": "Implementación de interfaces, control de versiones, soporte y documentación.",
-          "en": "Interface implementation, version control, support and documentation."
+        "description": {
+          "es": "Landing page responsive para una empresa de seguridad privada, con identidad visual táctica y contacto directo.",
+          "en": "Responsive landing page for a private security company, with tactical visual identity and direct contact."
         },
-        "role": {
-          "es": "Practicante Pre-Profesional. Fechas exactas: No puedo confirmarlo.",
-          "en": "Pre-professional intern. Exact dates: No puedo confirmarlo."
-        },
-        "stack": ["Angular", "HTML", "CSS", "JavaScript", "Node.js", "Git"]
+        "stack": ["Angular"],
+        "links": []
       }
     ]
   },
   "contact": {
-    "title": { "es": "Contacto", "en": "Contact" },
+    "title": {
+      "es": "¿Tienes un proyecto o quieres conversar?",
+      "en": "Do you have a project or want to talk?"
+    },
     "intro": {
-      "es": "Escríbeme por email, WhatsApp o deja un mensaje breve.",
-      "en": "Write by email, WhatsApp or leave a short message."
+      "es": "Puedes escribirme directamente por correo o WhatsApp.",
+      "en": "You can write to me directly by email or WhatsApp."
     },
-    "fields": {
-      "name": { "es": "Nombre", "en": "Name" },
-      "email": { "es": "Email", "en": "Email" },
-      "message": { "es": "Mensaje", "en": "Message" }
-    },
-    "placeholders": {
-      "name": { "es": "Tu nombre completo", "en": "Your full name" },
-      "email": { "es": "tu@email.com", "en": "you@email.com" },
-      "message": {
-        "es": "Cuéntame qué necesitas construir o mejorar.",
-        "en": "Briefly describe what you need to build or improve."
-      }
-    },
-    "submit": { "es": "Enviar mensaje", "en": "Send message" },
-    "success": {
-      "es": "Mensaje enviado. Te responderé a la brevedad.",
-      "en": "Message sent. I will reply as soon as possible."
-    },
-    "error": {
-      "es": "No se pudo enviar. Usa email o WhatsApp directo.",
-      "en": "Could not send. Use direct email or WhatsApp."
-    }
-  },
-  "footer": {
-    "privacy": {
-      "es": "Construyamos algo útil.",
-      "en": "Let's build something useful. "
+    "portfolioLabel": {
+      "es": "Portafolio",
+      "en": "Portfolio"
     }
   }
 }
